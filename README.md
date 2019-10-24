@@ -1,3 +1,8 @@
+## Movie test
+
+This project was made using, `axios`, `materialize-css`, `redux`, `react-router`, `sass` `redux-sagas`, `lodash` and `universal-cookie` for 
+<br/> the handle of the cookies. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
