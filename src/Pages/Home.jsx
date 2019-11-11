@@ -16,7 +16,7 @@ class Home extends Component {
   state = {
     timeout: 0
   }
-  
+
   search = debounce((e, value) => {
     e.preventDefault()
     if (value !== ''){
@@ -42,23 +42,25 @@ class Home extends Component {
           </form>
         </div>
       </TopPart>
-      {loading ? 
-        'loading...' :
-      <div className="container-fluid">
-        <div className="rating right">
-          <Rating rating={rating} search={search} searchBy={this.searchWithStars} enabled={true} />
+      { loading ? 
+        'loading...' 
+        :
+        <div className="container-fluid">
+          <div className="rating right">
+            <Rating rating={rating} search={search} searchBy={this.searchWithStars} enabled={true} />
+          </div>
+          <br/><br/>
+          <div className="row">
+            {movies.map( movie => {
+              return(
+              <div className="col s12 m4 l3" key={movie.id}>
+                <MoviesPoster movie={movie}/>
+              </div>
+              )
+            })
+          }
+          </div>
         </div>
-        <br/><br/>
-        <div className="row">
-          {movies.map( movie => {
-            return(
-            <div className="col s12 m4 l3" key={movie.id}>
-              <MoviesPoster movie={movie}/>
-            </div>
-            )
-          })}
-        </div>
-      </div>
       }
       </>
     )
