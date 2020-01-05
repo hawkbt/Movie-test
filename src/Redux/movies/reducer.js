@@ -10,7 +10,7 @@ export const initialState = {
     page: 1
 }
 
-function reducer(state = initialState, action = {}) {
+const reducer = (state = initialState, action = {}) => {
     switch (action.type) {
         case SEARCH_MOVIES:
             return {...state, loading: true }
@@ -26,6 +26,7 @@ function reducer(state = initialState, action = {}) {
             }
 
         case RECEIVE_MOVIES:
+        
             return {
                 ...state,
                 loading: false,
